@@ -1,0 +1,12 @@
+[Unit]
+Description=Almighty Lightweight Fact Remote Exchange Daemon
+Documentation=man:alfred(8)
+BindsTo=sys-subsystem-net-devices-%i.device
+After=sys-subsystem-net-devices-%i.device
+
+[Service]
+ExecStart=/usr/bin/alfred -m -i %I
+Type=simple
+
+[Install]
+WantedBy=multi-user.target
